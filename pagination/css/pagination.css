@@ -1,0 +1,46 @@
+#pagingg ul.pagination{
+	margin:0px;
+	padding:0px;
+	height:100%;
+	overflow:hidden;
+	font:12px 'Tahoma';
+	list-style-type:none;	
+}
+
+#pagingg ul.pagination li.details{
+    padding:7px 10px 7px 10px;
+    font-size:14px;
+}
+
+
+
+#pagingg ul.pagination li{
+	float:left;
+	margin:0px;
+	padding:0px;
+	margin-left:5px;
+	
+	
+}
+
+#pagingg ul.pagination li:first-child{
+	margin-left:0px;
+}
+
+#pagingg ul.pagination li a{
+	color:black;
+	display:block;
+	text-decoration:none;
+	padding:7px 10px 7px 10px;
+	
+}
+
+#pagingg ul.pagination li a img{
+	border:none;
+}
+	
+/* Modern Overrides */
+.page-item .page-link { border-radius: 50px; margin: 0 4px; box-shadow: 0 2px 5px rgba(0,0,0,0.05); border: none; font-weight: 500; transition: all 0.3s ease; }
+.page-item.active .page-link { box-shadow: 0 4px 10px rgba(0,123,255,0.3); transform: translateY(-1px); }
+.page-item .page-link:hover:not(.disabled) { transform: translateY(-1px); box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
+
