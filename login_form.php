@@ -260,48 +260,41 @@ if(isset($conn)) {
             width: 100%;
             display: flex;
             flex-direction: column;
-            gap: 16px;
+            gap: 0;
         }
 
         .feature-item {
             display: flex;
-            align-items: flex-start;
+            align-items: center;
             gap: 14px;
-            background: rgba(255,255,255,0.07);
-            border: 1px solid rgba(255,255,255,0.12);
-            border-radius: 12px;
-            padding: 14px 16px;
-            transition: background 0.25s;
+            padding: 13px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
         }
-        .feature-item:hover {
-            background: rgba(255,255,255,0.13);
+        .feature-item:last-child {
+            border-bottom: none;
         }
 
         .feature-icon {
             flex-shrink: 0;
-            width: 38px; height: 38px;
-            background: rgba(255,255,255,0.15);
-            border-radius: 9px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1rem;
-            color: #fff;
+            width: 28px;
+            text-align: center;
+            font-size: 0.85rem;
+            color: rgba(255,255,255,0.5);
         }
 
         .feature-text {
             display: flex;
             flex-direction: column;
-            gap: 3px;
+            gap: 2px;
         }
         .feature-text strong {
-            color: #fff;
-            font-size: 0.88rem;
+            color: rgba(255,255,255,0.92);
+            font-size: 0.85rem;
             font-weight: 600;
         }
         .feature-text span {
-            color: rgba(255,255,255,0.6);
-            font-size: 0.78rem;
+            color: rgba(255,255,255,0.48);
+            font-size: 0.75rem;
             line-height: 1.4;
         }
     </style>
@@ -317,28 +310,28 @@ if(isset($conn)) {
 
         <div class="features-list">
             <div class="feature-item">
-                <div class="feature-icon"><i class="fas fa-inbox"></i></div>
+                <div class="feature-icon"><i class="fas fa-check"></i></div>
                 <div class="feature-text">
                     <strong>ලිපි ලේඛනගත කිරීම</strong>
                     <span>ලැබෙන ලිපි (තැපෑල, Email, අතින් ලිපි ආදිය) ඉක්මනින් ලේඛනගත කරන්න</span>
                 </div>
             </div>
             <div class="feature-item">
-                <div class="feature-icon"><i class="fas fa-tasks"></i></div>
+                <div class="feature-icon"><i class="fas fa-check"></i></div>
                 <div class="feature-text">
                     <strong>ලිපි නිරීක්ෂණය</strong>
-                    <span>ලිපිවල වත්මන් තත්ත්වය (NON / REC / WOK / CLD) නිරන්තරව නිරීක්ෂණය කරන්න</span>
+                    <span>ලිපිවල වත්මන් තත්ත්වය (NON / REC / WOK / CLD) නිරීක්ෂණය කරන්න</span>
                 </div>
             </div>
             <div class="feature-item">
-                <div class="feature-icon"><i class="fas fa-user-check"></i></div>
+                <div class="feature-icon"><i class="fas fa-check"></i></div>
                 <div class="feature-text">
                     <strong>කාර්යය සාධනය</strong>
-                    <span>විෂය ලිපිකරුවන්ගේ කාර්යය ක්‍රියාකාරිත්වය ගණනය කර නිරීක්ෂණය කරන්න</span>
+                    <span>විෂය ලිපිකරුවන්ගේ කාර්යය ක්‍රියාකාරිත්වය නිරීක්ෂණය කරන්න</span>
                 </div>
             </div>
             <div class="feature-item">
-                <div class="feature-icon"><i class="fas fa-chart-bar"></i></div>
+                <div class="feature-icon"><i class="fas fa-check"></i></div>
                 <div class="feature-text">
                     <strong>වාර්තා හා සෙවීම</strong>
                     <span>ලිපි සෙවීම, CSV export සහ Professional PDF වාර්තා නිර්මාණය කරන්න</span>
