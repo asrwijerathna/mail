@@ -133,9 +133,7 @@
                     <li class="nav-item">
                       <a class="nav-link" href="mail_view_cld.php"><i class="fas fa-check-double"></i> වැඩ අවසන් (CLD)</a>
                     </li>                    
-                    <li class="nav-item">
-                      <a class="nav-link" href="export_excel.php"><i class="fas fa-file-excel"></i> වාර්ථා</a>
-                    </li>
+
 
                     <li class="nav-item">
                       <a class="nav-link" href="search.php"><i class="fas fa-search"></i> සෙවීම්</a>
