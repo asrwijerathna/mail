@@ -1,5 +1,5 @@
-<?php include("includes/header.php"); ?>
 <?php
+if (session_status() === PHP_SESSION_NONE) { session_start(); }
 include('dbconnect.php');
 include('pagination/function.php');
 $damid = 14;
@@ -90,6 +90,8 @@ if (isset($_GET['export_csv']) && $has_search) {
     fclose($out);
     exit();
 }
+// ─── Include Header (HTML Output Starts Here) ────────────────────────────────
+include("includes/header.php");
 
 // ─── Pagination ──────────────────────────────────────────────────────────────
 $limit      = isset($_GET['limit']) ? (int)$_GET['limit'] : 20;
