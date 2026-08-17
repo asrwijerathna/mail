@@ -20,15 +20,15 @@
          " method="post" name="status_form<?php echo $l_id_no;?>" id="status_form<?php echo $l_id_no;?>" onsubmit="return validateForm<?php echo $l_id_no;?>()" >
         
             <div class="form-group row">            	
-                <label for="dtp_input2" class="col-md-2" >දිනය</label>  
+                <label for="dtp_input2_<?php echo $l_id_no;?>" class="col-md-2" >දිනය</label>  
                 <div class="controls">
-                    <div class="input-group date form_date" data-date="" data-date-format="yyyy-mm-dd" data-link-field="dtp_input2" data-link-format="yyyy-mm-dd" >
-                        <input class="form-control col-md-5" type="text" name="action_date" id="action_date" value="" placeholder="YYYY-MM-DD" readonly>
+                    <div class="input-group date form_date" data-date="<?php echo date('Y-m-d'); ?>" data-date-format="yyyy-mm-dd" data-link-field="dtp_input2_<?php echo $l_id_no;?>" data-link-format="yyyy-mm-dd" >
+                        <input class="form-control col-md-5" type="text" name="action_date" id="action_date_<?php echo $l_id_no;?>" value="<?php echo date('Y-m-d'); ?>" placeholder="YYYY-MM-DD">
                         <span class="input-group-addon" aria-describedby="basic-addon2">X<span class="glyphicon glyphicon-remove"></span></span>
                         <span class="input-group-addon" aria-describedby="basic-addon2">DATE<span class="glyphicon glyphicon-calendar"></span></span>
                     </div>
                 </div>
-				<input type="hidden" id="dtp_input2" value="" /><br/>
+				<input type="hidden" id="dtp_input2_<?php echo $l_id_no;?>" value="<?php echo date('Y-m-d'); ?>" /><br/>
 	        </div>
             
             <div class="form-group row radio-pink-gap">

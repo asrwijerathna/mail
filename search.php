@@ -406,3 +406,47 @@ function chkd($arr, $val) { return in_array($val, $arr) ? 'checked' : ''; }
 </div>
 
 <?php include("includes/footer.php"); ?>
+
+<script type="text/javascript" src="js/dtpicker/bootstrap-datetimepicker.js" charset="UTF-8"></script>
+<script type="text/javascript">
+// Initialize datepicker for any .form_date elements already on page
+$(document).ready(function () {
+    initDatePickers();
+
+    // Re-initialize whenever a status modal is opened (dynamically rendered modals)
+    $(document).on('show.bs.modal', '.modal', function () {
+        var modal = this;
+        setTimeout(function () {
+            $(modal).find('.form_date').each(function () {
+                if (!$(this).data('datetimepicker')) {
+                    $(this).datetimepicker({
+                        weekStart: 1,
+                        todayBtn: 1,
+                        autoclose: 1,
+                        todayHighlight: 1,
+                        startView: 2,
+                        minView: 2,
+                        forceParse: 0
+                    });
+                }
+            });
+            // Enforce readonly on date inputs inside modal
+            $(modal).find('.form_date input[type="text"]').prop('readonly', true);
+        }, 150);
+    });
+});
+
+function initDatePickers() {
+    $('.form_date').datetimepicker({
+        weekStart: 1,
+        todayBtn: 1,
+        autoclose: 1,
+        todayHighlight: 1,
+        startView: 2,
+        minView: 2,
+        forceParse: 0
+    });
+    // Enforce readonly so date can only change via picker
+    $('.form_date input[type="text"]').prop('readonly', true);
+}
+</script>

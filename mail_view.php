@@ -168,47 +168,47 @@ function filterTable() {
 
   
 <!--Date time picker-->
-<script type="text/javascript" src="js/jquery-1.8.3.min.js" charset="UTF-8"></script>
-<script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
-<script type="text/javascript" src="js/dtpicker/bootstrap-datetimepicker.js" charset="UTF-8"></script>
-<script type="text/javascript" src="js/dtpicker/locales/bootstrap-datetimepicker.uk.js" charset="UTF-8"></script>
-
-
-
-<script type="text/javascript">
-    $('.form_datetime').datetimepicker({
-        //language:  'fr',
-        weekStart: 1,
-        todayBtn:  1,
-		autoclose: 1,
-		todayHighlight: 1,
-		startView: 2,
-		forceParse: 0,
-        showMeridian: 1
-    });
-	$('.form_date').datetimepicker({
-        //language:  'fr',
-        weekStart: 1,
-        todayBtn:  1,
-		autoclose: 1,
-		todayHighlight: 1,
-		startView: 2,
-		minView: 2,
-		forceParse: 0
-    });
-	$('.form_time').datetimepicker({
-        //language:  'fr',
-        weekStart: 1,
-        todayBtn:  1,
-		autoclose: 1,
-		todayHighlight: 1,
-		startView: 1,
-		minView: 0,
-		maxView: 1,
-		forceParse: 0
-    });
-</script>
       
-<?php 
-include("includes/footer.php"); 
-?>
+<?php include("includes/footer.php"); ?>
+
+<script type="text/javascript" src="js/dtpicker/bootstrap-datetimepicker.js" charset="UTF-8"></script>
+<script type="text/javascript">
+$(document).ready(function () {
+    initDatePickers();
+    $(document).on('show.bs.modal', '.modal', function () {
+        var modal = this;
+        setTimeout(function () {
+            $(modal).find('.form_date').each(function () {
+                if (!$(this).data('datetimepicker')) {
+                    $(this).datetimepicker({
+                        weekStart: 1,
+                        todayBtn: 1,
+                        autoclose: 1,
+                        todayHighlight: 1,
+                        startView: 2,
+                        minView: 2,
+                        forceParse: 0
+                    });
+                }
+            });
+            $(modal).find('.form_date input[type="text"]').prop('readonly', true);
+        }, 150);
+    });
+});
+
+function initDatePickers() {
+    $('.form_datetime').datetimepicker({
+        weekStart: 1, todayBtn: 1, autoclose: 1,
+        todayHighlight: 1, startView: 2, forceParse: 0, showMeridian: 1
+    });
+    $('.form_date').datetimepicker({
+        weekStart: 1, todayBtn: 1, autoclose: 1,
+        todayHighlight: 1, startView: 2, minView: 2, forceParse: 0
+    });
+    $('.form_time').datetimepicker({
+        weekStart: 1, todayBtn: 1, autoclose: 1,
+        todayHighlight: 1, startView: 1, minView: 0, maxView: 1, forceParse: 0
+    });
+    $('.form_date input[type="text"]').prop('readonly', true);
+}
+</script>

@@ -149,13 +149,38 @@ function filterTable() {
 
 <script type="text/javascript" src="js/dtpicker/bootstrap-datetimepicker.js" charset="UTF-8"></script>
 <script type="text/javascript">
-	$('.form_date').datetimepicker({
-        weekStart: 1,
-        todayBtn:  1,
-		autoclose: 1,
-		todayHighlight: 1,
-		startView: 2,
-		minView: 2,
-		forceParse: 0
+$(document).ready(function () {
+    initDatePickers();
+    $(document).on('show.bs.modal', '.modal', function () {
+        var modal = this;
+        setTimeout(function () {
+            $(modal).find('.form_date').each(function () {
+                if (!$(this).data('datetimepicker')) {
+                    $(this).datetimepicker({
+                        weekStart: 1,
+                        todayBtn: 1,
+                        autoclose: 1,
+                        todayHighlight: 1,
+                        startView: 2,
+                        minView: 2,
+                        forceParse: 0
+                    });
+                }
+            });
+            $(modal).find('.form_date input[type="text"]').prop('readonly', true);
+        }, 150);
     });
+});
+function initDatePickers() {
+    $('.form_date').datetimepicker({
+        weekStart: 1,
+        todayBtn: 1,
+        autoclose: 1,
+        todayHighlight: 1,
+        startView: 2,
+        minView: 2,
+        forceParse: 0
+    });
+    $('.form_date input[type="text"]').prop('readonly', true);
+}
 </script>
